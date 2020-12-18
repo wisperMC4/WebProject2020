@@ -10,20 +10,22 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <a href="Login.html"><img id="loginIcon" src="Lib/Image/login.png" class="TopHead" alt="Login"  ></a>
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu" id="accountdetails" aria-labelledby="dropdownMenuReference">
-                  <a class="dropdown-item" href="userDetails.html">User Details</a>
-                  <a class="dropdown-item" id="logout" >Logout</a>
+              <div class="btn-group">
+                <a href="Login.html"><img id="loginIcon" src="Lib/Image/login.png" class="TopHead" alt="Login" ></a>
+                <div id="dropdownMenu" class="dropdown d-none">
+                  <button class="dropbtn btn btn-primary">&darr;</button>
+                  <div class="dropdown-content">
+                    <a href="userDetails.html">User Details</a>
+                    <button id="logoutBut" class=" btn-danger">Logout</button>
+                  </div>
                 </div>
+              </div>
             </div>
             <div class="col-8">
               <a href="Index.html"><h1 class="TopHead LogoLink">Jamies Computers</h1></a>
             </div>
             <div class="col">
-              <a href="checkout.html"><button type="button" class="btn btn-secondary m1-2 TopHead">
+              <a id="checkoutAc" ><button type="button" class="btn btn-secondary m1-2 TopHead">
                 <img src="lib/Image/cart.png" alt="checkout" >
                 <span class="badge badge-light" id="checkout"></span>
               </button></a>

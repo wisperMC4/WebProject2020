@@ -5,21 +5,38 @@ $(document).ready(function(){
     {  
         localStorage.setItem('checkout',0);
     }
-    $("#checkout" ).html(localStorage.getItem('checkout'));
-
-     // check if user is logged in or logged out..
-     var loggedin=localStorage.getItem('loggedIn');
-    
-    //Add to cart Count
-    $(".shopbut").click(function(){
-        var total=localStorage.getItem('checkout');
-        total++;
-        localStorage.setItem('checkout',total);
-        $("#checkout" ).html(total );
-    });
-
 
     //Login 
+    // check if user is logged in or logged out..
+    var loggedin=localStorage.getItem('loggedIn'); 
+
+    //Login/Logout Changes
+    if(loggedin==1) 
+    {
+        //adds a class to the login icon so when its logged in it changes colour
+        $("#loginIcon").addClass('iconChange');
+
+        //shows dropdown menu
+        $("#dropdownMenu").removeClass("d-none");
+        $("#dropdownMenu").addClass("d-block");
+
+        //checkout access
+        $("#checkoutAc").attr("href","checkout.html");
+    }
+    else
+    {
+        //Brings the login icon to its default state
+        $("#loginIcon").removeClass('iconChange');
+
+        //hides dropdown menu
+        $("#dropdownMenu").addClass("d-none");
+        $("#dropdownMenu").removeClass("d-block");
+
+        //stops user from using checkout
+        $("#checkoutAc").attr("href","#");
+    }    
+
+
     $('form[name="Login"]' ).submit(function( event ) 
     {
         var email=$('input[name="Email"]').val();
@@ -37,33 +54,36 @@ $(document).ready(function(){
             $("#loginER").addClass("d-block");
         }
         return false;
-    });  
-
-
-    if(loggedin==1) 
-    {
-        $("#loginIcon").addClass('iconChange');//adds a class to the login icon so when its logged in it changes colour
-
-        $("#accountdetails").removeClass( "d-none" ); //adds the dropdown menu when logged in 
-        $("#accountdetails").removeClass( "show" );
-    }
-    else
-    {
-        $("#loginIcon").removeClass('iconChange');//Brings the login icon to its default state
-
-        $("#accountdetails").addClass("d-none"); //Removes the login and user details 
-    }
-   
-   
-    $("#loginlogout").button().click(function(){
-        if (loggedin==1) {
+    });
+    
+    //logout user
+    $("#logoutBut").click(function(){
+        if (loggedin==1) 
+        {
             // set the flag so that user is not logged in
             localStorage.setItem('loggedIn',0);
             window.location.href = "login.html";
-        }  else 
-            window.location.href = "login.html";
+        }  
+        else 
+        window.location.href = "login.html";
+    }); 
 
-    });  
+    //Checkout
+    //Checkout Num
+     $("#checkout" ).html(localStorage.getItem('checkout'));
+
+     // check if user is logged in or logged out..
+     var loggedin=localStorage.getItem('loggedIn');
+    
+    //Add to cart Count
+    $(".shopbut").click(function(){
+        var total=localStorage.getItem('checkout');
+        total++;
+        localStorage.setItem('checkout',total);
+        $("#checkout" ).html(total );
+    });
+
+     
 
     //Data Validation
     if (localStorage.getItem('userdetails') === null) {  
