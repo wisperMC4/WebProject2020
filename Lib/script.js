@@ -36,6 +36,13 @@ $(document).ready(function(){
         $("#checkoutAc").attr("href","#");
     }    
 
+    //tells you to login to use checkout
+    $("#checkoutAc").click(function(){
+        if (loggedin!=1) 
+        {
+            alert("Log in to use checkout");
+        }  
+    }); 
 
     $('form[name="Login"]' ).submit(function( event ) 
     {
@@ -81,6 +88,16 @@ $(document).ready(function(){
         total++;
         localStorage.setItem('checkout',total);
         $("#checkout" ).html(total );
+    });
+
+    //checkout reset
+    $('form[name="buy"]' ).submit(function( event ) 
+    {
+        
+        // successful login, user redirected to shop.html
+        localStorage.setItem('checkout',0);    
+        window.location.href = "index.html";  // redirect to shop page
+        return false;
     });
 
      
