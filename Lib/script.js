@@ -124,5 +124,4 @@ $(document).ready(function(){
         $('input[name="Town"]').val(userDetails.address2);
         $('input[name="County"]').val(userDetails.address3);
     }
-
 }); 

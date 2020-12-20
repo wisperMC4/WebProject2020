@@ -79,6 +79,36 @@ ul {
   width: 125px;
 }
 
+#home1{
+  padding-top: 1em; 
+  padding-bottom: 1em;
+}
+
+#future{
+  padding-top: 30px;
+  padding-bottom: 15px;
+  height: 375px;
+}
+
+#lilworse{
+  padding-top: 25px;
+  height: 250px;
+}
+
+#pro2{
+  padding-top: 20px; 
+  padding-bottom: 10px;
+}
+
+#mac{
+  padding-top: 35px; 
+  padding-bottom: 30px;
+}
+
+#submitBut{
+  margin-bottom: 2em;
+}
+
 #item{
   border: 1px solid black;
   border-radius: 1em;
@@ -87,6 +117,10 @@ ul {
   padding-bottom: 2.5em;
   margin-bottom: 1em;
   width: 100%;
+}
+
+#happyGuy{
+  width: 89%;
 }
 
 #item img{
@@ -154,12 +188,25 @@ ul {
   .card-img-top{
     height: 25em;
   }
+  .col-8{
+    width: 1em;
+  }
+
+  .logolink{
+    font-size: 1em;
+  }
 } 
 
 /* Small devices */
 @media only screen and (max-width: 650px) {
   .card-img-top{
-    height: 20em;
-    width: 10em;
+    height: 22em;
+    width: 20em;
   }
+
+  .socialIcon{
+    height: 45px;
+    width: 45px;
+  }
+
 }
