@@ -69,10 +69,10 @@ $(document).ready(function(){
         {
             // set the flag so that user is not logged in
             localStorage.setItem('loggedIn',0);
-            window.location.href = "login.html";
+            window.location.href = "Login.html";
         }  
         else 
-        window.location.href = "login.html";
+        window.location.href = "Login.html";
     }); 
 
     //Checkout
