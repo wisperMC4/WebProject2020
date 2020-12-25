@@ -21,7 +21,7 @@ $(document).ready(function(){
         $("#dropdownMenu").addClass("d-block");
 
         //checkout access
-        $("#checkoutAc").attr("href","checkout.html");
+        $("#checkoutAc").attr("href","Checkout.html");
     }
     else
     {
