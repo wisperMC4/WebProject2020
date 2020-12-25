@@ -198,7 +198,7 @@ ul {
 } 
 
 /* Small devices */
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 766px) {
   .card-img-top{
     height: 22em;
     width: 20em;
